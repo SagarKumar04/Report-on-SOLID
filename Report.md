@@ -91,8 +91,13 @@ class TechTeam extends Employee
 
 class SalesTeam extends Employee
 {
-	
+
 }
 ```
 #### Dependency Inversion
-Classes should not depend on concrete details of other classes
+Classes should depend upon abstractions and not concrete details from another class.
+
+References:
+[Wikipedia](https://en.wikipedia.org/wiki/SOLID)
+[The Team Coder](https://team-coder.com/solid-principles/)
+[TechBeacon](https://techbeacon.com/app-dev-testing/how-write-effective-software-defect-reports)
