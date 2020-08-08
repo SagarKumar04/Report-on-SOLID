@@ -2,20 +2,19 @@
 
 ### Summary
 Codebase refactoring to include SOLID principles.
-The original project codebase is difficult to manage due to lack of SOLID principles.
-In Object Oriented Programming, SOLID is a short form for five design principles which helps make software design easy to understand, maintain and edit.
 
 ### Description
 The original project codebase is difficult to manage due to lack of **S.O.L.I.D principles**.
+In Object Oriented Programming, S.O.L.I.D. is a short form for five design principles which helps make software design easy to understand, maintain and edit.
 SOLID stands for:
 * **S**ingle responsibility
 * **O**pen-closed
 * **L**iskov substitution
 * **I**nterface segregation
-* **D**ependency inversion.
+* **D**ependency inversion
 
 #### Single Responsibility
-Each class should be designed in a way that it handles only responsibility. This helps in having less side effects when changes to original code are made.
+Each class should be designed in a way that it handles only one responsibility. This helps in having less side effects when changes to original code are made.
 *Example:*
 ```
 class EmployeeManagement
@@ -43,7 +42,7 @@ class EmployeeDao
 ```
 
 #### Open-Closed Principle
-Classes used in codebase should be designed in such a way that adding extra feature can be achieved by extending the class and there’s no need to modify original class.
+Classes used in codebase should be designed in a way such that adding extra feature(s) can be achieved by extending the class and there’s no need to modify original class.
 
 *Example:*
 ```
@@ -73,10 +72,10 @@ class Manager extends Employee
 	//Code to print manager details
 }
 ```
-Here, classes should be designed in such a way that enables same behaviour irrespective of the object with which function is invoked
+Here, classes should be designed in such a way that enables same behaviour irrespective of the object with which function is invoked.
 
 #### Interface Segregation Principle
-Just like classes, interfaces should be designed in a way which allows clients who implements the interface to not depend upon methods which are not required by client.
+Interfaces should be designed in a way which allows clients who implements the interface to not depend upon methods which are not required by client.
 *Example:*
 ```
 class Employee
