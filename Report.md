@@ -2,6 +2,8 @@
 
 ### Summary
 Codebase refactoring to include SOLID principles.
+The original project codebase is difficult to manage due to lack of SOLID principles.
+In Object Oriented Programming, SOLID is a short form for five design principles which helps make software design easy to understand, maintain and edit.
 
 ### Description
 The original project codebase is difficult to manage due to lack of **S.O.L.I.D principles**.
