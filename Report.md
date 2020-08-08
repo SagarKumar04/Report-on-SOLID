@@ -98,6 +98,6 @@ class SalesTeam extends Employee
 Classes should depend upon abstractions and not concrete details from another class.
 
 References:
-[Wikipedia](https://en.wikipedia.org/wiki/SOLID)
-[The Team Coder](https://team-coder.com/solid-principles/)
-[TechBeacon](https://techbeacon.com/app-dev-testing/how-write-effective-software-defect-reports)
+* [Wikipedia](https://en.wikipedia.org/wiki/SOLID)
+* [The Team Coder](https://team-coder.com/solid-principles/)
+* [TechBeacon](https://techbeacon.com/app-dev-testing/how-write-effective-software-defect-reports)
