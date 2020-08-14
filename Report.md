@@ -17,27 +17,23 @@ SOLID stands for:
 Each class should be designed in a way that it handles only one responsibility. This helps in having less side effects when changes to original code are made.
 *Example:*
 ```
-class EmployeeManagement
-{
-	public static void main(String args[])
-	{
-		//Code to take employee details as input
-		//Code to add details to database
+class EmployeeManagement {
+	public static void main(String args[]) {
+		//code to take employee details as input
+		//code to add details to database
 	}
 }
 ```
 
 Instead, two separate classes can be used:
 ```
-class EmployeeManagement
-{
-	//Code to take employee details as input
-	//Calls appropriate function of other class to add details to databse
+class EmployeeManagement {
+	//code to take employee details as input
+	//calls appropriate function of other class to add details to databse
 }
 
-class EmployeeDao
-{
-	//Code to add details to databse
+class EmployeeDao {
+	//code to add details to databse
 }
 ```
 
@@ -46,14 +42,12 @@ Classes used in codebase should be designed in a way such that adding extra feat
 
 *Example:*
 ```
-class Employee
-{
-	//Code to take employee details as input
+class Employee {
+	//business logic
 }
 
-class Managers extends Employee
-{
-	//Code to add additional details
+class Managers extends Employee {
+	//business logic
 }
 ```
 
@@ -62,14 +56,12 @@ This states that derived classes must be substitutable for their base classes. T
 
 *Example:*
 ```
-class Employee
-{
-	//Code to print employee details
+class Employee {
+	//business logic
 }
 
-class Manager extends Employee
-{
-	//Code to print manager details
+class Manager extends Employee {
+	//business logic
 }
 ```
 Here, classes should be designed in such a way that enables same behaviour irrespective of the object with which function is invoked.
@@ -78,23 +70,54 @@ Here, classes should be designed in such a way that enables same behaviour irres
 Interfaces should be designed in a way which allows clients who implements the interface to not depend upon methods which are not required by client.
 *Example:*
 ```
-class Employee
-{
-
+class Employee {
+	//appropriate data members and member functions
 }
 
-class TechTeam extends Employee
-{
-
+class TechTeam extends Employee {
+	//appropriate data members and member functions
 }
 
-class SalesTeam extends Employee
-{
-
+class SalesTeam extends Employee {
+	//appropriate data members and member functions
 }
 ```
 #### Dependency Inversion
-Classes should depend upon abstractions and not concrete details from another class.
+This says that, high level modules should not depend on low level modules. Both should depend on abstraction.
+It also states that abstractions should not depend upon details, but details should depend upon abstraction.
+*Example*
+```
+class Consumer {
+	private Producer producer;
+	
+	public Consumer() {
+		producer = new Producer();
+	}
+	
+	//business logic
+}
+
+class Producer {
+	//business logic
+}
+```
+Here, _Consumer_ is dependent on _Producer_, which should not be the case so as to allow loose coupling and unit testing.
+The solution is, to use an abstract layer -  interfaces.
+
+Instead, we can create interface of _Consumer_ and implement the above code as follows:
+```
+interface ProducerInterface {
+	//business logic
+}
+
+class Producer implements ProducerInterface {
+	//business logic
+}
+
+class Consumer extends Producer {
+	//business logic
+}
+```
 
 References:
 * [Wikipedia](https://en.wikipedia.org/wiki/SOLID)
